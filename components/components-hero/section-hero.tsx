@@ -27,13 +27,20 @@ export function SectionHero() {
           </span>
         </h1>
 
-        <div className="flex flex-wrap gap-4 mt-4">
+        <div className="flex flex-row gap-4 mt-4">
           <button className="bg-stone-900 dark:bg-stone-100 dark:text-black text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-amber-800 dark:hover:bg-stone-300 transition-all">
-            <Github size={18} /> GitHub
+            <a href="https://github.com/MatheusDuarteM" target="_blank">
+              <Github size={18} />
+            </a>
+            <a href="https://github.com/MatheusDuarteM" target="_blank">
+              GitHub
+            </a>
           </button>
-          <button className="border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200 px-8 py-3 rounded-full flex items-center gap-2 hover:bg-stone-50 dark:hover:bg-stone-900 transition-all">
-            <FileText size={18} /> Currículo
-          </button>
+          <a href="/curriculo-Matheus-Duarte.pdf" download="Meu_Curriculo.pdf">
+            <button className="border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200 px-8 py-3 rounded-full flex items-center gap-2 hover:bg-stone-50 dark:hover:bg-stone-900 transition-all">
+              <FileText size={18} /> Currículo
+            </button>
+          </a>
         </div>
       </motion.div>
 
@@ -43,11 +50,11 @@ export function SectionHero() {
       >
         <div className="absolute -inset-4 border border-amber-700/20 rounded-full group-hover:scale-105 transition-transform duration-500"></div>
         <Image
-          src="/profile.jpg"
-          alt="Matheus Duarte"
+          src="/foto-perfil.png"
+          alt="Matheus Duarte Martins"
           width={220}
           height={220}
-          className="rounded-full grayscale hover:grayscale-0 transition-all duration-700 object-cover border-4 border-white dark:border-stone-950 shadow-2xl"
+          className="rounded-full transition-all duration-700 object-cover border-4 border-white dark:border-stone-950 shadow-2xl"
         />
       </motion.div>
     </motion.section>

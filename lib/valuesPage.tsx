@@ -1,5 +1,4 @@
 // src/lib/valuesPage.ts
-import { Github, FileText, Mail, Phone } from "lucide-react";
 
 export const languages = [
   { name: "JavaScript", level: "Básico" },
@@ -24,13 +23,13 @@ export const projects = [
   {
     title: "Horta Vertical",
     tag: "Automação",
-    img: "/projects.jpg",
+    img: "/projeto2.jpeg",
     tech: ["C++", "Arduino", "Flutters"],
   },
   {
     title: "Gerenciamento Encomenda",
     tag: "Full Stack",
-    img: "/projects.jpg",
+    img: "/projeto3.png",
     tech: ["Java", "Java Swing", "MySQL"],
   },
 ];
