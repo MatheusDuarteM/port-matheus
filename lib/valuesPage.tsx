@@ -47,47 +47,49 @@ export const sectionHeaderData = {
   nav2: "Contato",
 };
 
-export const sectionServicosData = {
-  tituloh4_1: "Bacharelado em Engenharia de Software",
-  tituloh4_2: "Desenvolvimento Full Stack",
-  paragrafop2: "Sua Universidade",
-  paragrafop3:
-    "Foco em algoritmos, arquitetura de sistemas e desenvolvimento ágil.",
-  paragrafop4: "Nome do Bootcamp/Instituição",
-  paragrafop5:
-    "Formação intensiva focada em Next.js, Node.js e ecossistema moderno.",
-  span: "2020 - 2024",
-  span2: "2023",
-};
-
 export const sectionHeroData = {
-  span1: "— Vamos criar algo incrível juntos!",
-  tituloh1:
-    "Desenvolvedor Full Stack apaixonado por criar experiências digitais incríveis.",
-  span2: "e entusiasta de tecnologia.",
+  span1: "— Disponível para novos desafios em Software!",
+  tituloh1: "Desenvolvedor Full Stack Júnior & Engenheiro de Automação.",
+  span2: "especialista em transformar dados em soluções.",
   paragrafop:
-    "Eu construo experiências web acessíveis, perfeitas em cada pixel e de alto desempenho. Apaixonado por transformar problemas complexos em designs simples e intuitivos.",
+    "Com base sólida em Engenharia e formação técnica em Informática, foco no desenvolvimento de aplicações escaláveis com Next.js, React e Java. Atualmente coordenando sistemas e dados, busco integrar minha experiência analítica ao desenvolvimento de software de alta performance.",
   btn1: "Download CV",
   btn2: "GitHub Profile",
-  paragrafop2: "Experiência",
-  paragrafop3: "2+ Anos",
+  paragrafop2: "Projetos",
+  paragrafop3: "Full Stack",
 };
 
-export const sectionFooterData = {
-  tituloh3: "Vamos trabalhar",
-  span: " juntos.",
-  paragrafop:
-    "Estou disponível para novos projetos. Sinta-se à vontade para entrar em contato!",
-  botao1: "Enviar Mensagem",
-  paragrafop2: "Matheus Duarte Martins.",
-  paragrafop3: "Desenvolvedor Full Stack",
+export const sectionServicosData = {
+  // Foco na transição técnica
+  tituloh4_1: "Técnico em Informática & FrontEnd",
+  paragrafop2: "CEET Vasco Coutinho / Afrocodigos",
+  paragrafop3:
+    "Especialização prática em desenvolvimento Full Stack, com foco em Next.js, Java, Python e bancos de dados relacionais.",
+  span: "2023 - 2024",
+
+  // Valorizando o diploma de Engenheiro
+  tituloh4_2: "Engenharia de Controle e Automação",
+  paragrafop4: "Faculdade Multivix",
+  paragrafop5:
+    "Formação acadêmica que sustenta minha lógica de programação e capacidade de resolver problemas complexos através da tecnologia.",
+  span2: "Concluído em 2020",
 };
 
 export const sectionProjetosData = {
-  span: "Meu Portfólio",
-  tituloh3: "Projetos em Destaque",
+  span: "Portfolio Técnico",
+  tituloh3: "Aplicações & Soluções",
   paragrafop:
-    "Uma seleção dos meus trabalhos mais recentes, focados em performance, design e experiência do usuário.",
+    "Projetos desenvolvidos para consolidar conhecimentos em CRUD, interfaces dinâmicas e integração de sistemas, utilizando as melhores práticas de desenvolvimento.",
   paragrafop2:
-    "Descrição breve e impactante do projeto, destacando a solução entregue.",
+    "Desenvolvimento de sistema completo com interface intuitiva, foco em performance e experiência do usuário final.",
+};
+
+export const sectionFooterData = {
+  tituloh3: "Pronto para contribuir",
+  span: " com seu time.",
+  paragrafop:
+    "Estou em busca da minha primeira oportunidade oficial como Desenvolvedor, levando comigo maturidade profissional e paixão por código limpo.",
+  botao1: "Vamos conversar?",
+  paragrafop2: "Matheus Duarte Martins",
+  paragrafop3: "Desenvolvedor Full Stack Júnior",
 };

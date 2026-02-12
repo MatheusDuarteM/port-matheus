@@ -41,6 +41,8 @@ export function SectionServicos(props: SectionServicosProps) {
                 className="text-xl font-bold text-stone-400 hover:text-amber-700 transition-colors cursor-default"
               >
                 {lang.name}
+                <br />
+                {lang.level}
               </span>
             ))}
           </div>
