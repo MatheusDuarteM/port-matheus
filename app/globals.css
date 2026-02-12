@@ -1,32 +1,41 @@
 @import "tailwindcss";
 
-/* src/app/globals.css */
-html {
-  scroll-behavior: smooth;
-}
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Cores Light - Baseadas no exemplo */
+  --background: #f8f7f6;
+  --surface: #ffffff;
+  --primary: #cf7317;
+  --primary-dark: #a65c12;
+  --text-main: #3d2e22;
+  --text-muted: #6b584a;
+  --border: rgba(207, 115, 23, 0.1);
+}
+
+.dark {
+  /* Cores Dark - Tom de marrom profundo */
+  --background: #211911;
+  --surface: #2c2219;
+  --text-main: #f8f7f6;
+  --text-muted: #a39489;
+  --border: rgba(207, 115, 23, 0.2);
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-dark);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-border-custom: var(--border);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }

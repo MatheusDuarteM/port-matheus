@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Github, FileText } from "lucide-react";
+import { Github, Download, Code } from "lucide-react";
 import { staggerContainer, fadeInLeft, fadeInRight } from "@/lib/transitions";
 
 export function SectionHero() {
@@ -11,51 +11,90 @@ export function SectionHero() {
       whileInView="visible"
       viewport={{ once: true }}
       variants={staggerContainer}
-      className="flex w-full flex-col md:flex-row items-center justify-between gap-12"
+      className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col lg:flex-row items-center gap-12 lg:gap-20"
     >
+      {/* Texto e Conteúdo Principal */}
       <motion.div
         variants={fadeInLeft}
-        className="flex flex-col items-start gap-6 flex-1"
+        className="flex-1 text-center lg:text-left order-2 lg:order-1"
       >
-        <span className="text-amber-700 font-medium tracking-[0.2em] uppercase text-xs">
-          Desenvolvedor Full Stack
-        </span>
-        <h1 className="text-5xl md:text-6xl font-serif font-medium text-stone-900 dark:text-stone-50 leading-[1.1]">
-          Meu nome é <br />
-          <span className="italic text-stone-700 dark:text-stone-400">
-            Matheus Duarte Martins
+        {/* Selo Disponível para Contratação */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-700/10 text-amber-700 font-medium text-sm mb-6 border border-amber-700/20">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-700 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-700"></span>
+          </span>
+          Disponível para novos projetos
+        </div>
+
+        <h1 className="text-4xl lg:text-6xl font-bold text-stone-900 dark:text-white mb-6 leading-tight">
+          Olá, eu sou o Matheus. <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-amber-900">
+            Full Stack Developer
           </span>
         </h1>
 
-        <div className="flex flex-row gap-4 mt-4">
-          <button className="bg-stone-900 dark:bg-stone-100 dark:text-black text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-amber-800 dark:hover:bg-stone-300 transition-all">
-            <a href="https://github.com/MatheusDuarteM" target="_blank">
-              <Github size={18} />
-            </a>
-            <a href="https://github.com/MatheusDuarteM" target="_blank">
-              GitHub
-            </a>
-          </button>
-          <a href="/curriculo-Matheus-Duarte.pdf" download="Meu_Curriculo.pdf">
-            <button className="border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200 px-8 py-3 rounded-full flex items-center gap-2 hover:bg-stone-50 dark:hover:bg-stone-900 transition-all">
-              <FileText size={18} /> Currículo
+        <p className="text-lg text-stone-600 dark:text-stone-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+          Eu construo experiências web acessíveis, perfeitas em cada pixel e de
+          alto desempenho. Apaixonado por transformar problemas complexos em
+          designs simples e intuitivos.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          {/* Botão de Download CV */}
+          <a
+            href="/curriculo.pdf"
+            download="Matheus_Duarte.pdf"
+            className="w-full sm:w-auto"
+          >
+            <button className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-amber-700 text-white rounded-lg font-semibold hover:bg-amber-800 transition-all transform hover:-translate-y-1 shadow-lg shadow-amber-700/25">
+              <Download size={18} /> Download CV
+            </button>
+          </a>
+
+          {/* Botão do GitHub */}
+          <a
+            href="https://github.com/MatheusDuarteM"
+            target="_blank"
+            className="w-full sm:w-auto"
+          >
+            <button className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-transparent text-stone-800 dark:text-white border-2 border-stone-200 dark:border-stone-800 rounded-lg font-semibold hover:border-amber-700 hover:text-amber-700 transition-all">
+              <Github size={18} /> GitHub Profile
             </button>
           </a>
         </div>
       </motion.div>
 
+      {/* Imagem de Perfil com Badges */}
       <motion.div
         variants={fadeInRight}
-        className="relative group flex-direction-column items-center"
+        className="relative order-1 lg:order-2 group"
       >
-        <div className="absolute -inset-4 border border-amber-700/20 rounded-full group-hover:scale-105 transition-transform duration-500"></div>
-        <Image
-          src="/foto-perfil.png"
-          alt="Matheus Duarte Martins"
-          width={220}
-          height={220}
-          className="rounded-full transition-all duration-700 object-cover border-4 border-white dark:border-stone-950 shadow-2xl"
-        />
+        <div className="absolute -inset-4 bg-amber-700/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="relative w-64 h-64 lg:w-96 lg:h-96 rounded-full border-8 border-white dark:border-stone-900 shadow-2xl overflow-hidden">
+          <Image
+            src="/foto-perfil.png"
+            alt="Matheus Duarte Martins"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        {/* Badge de Experiência flutuante */}
+        <div
+          className="absolute bottom-4 right-0 lg:bottom-10 lg:right-4 bg-white dark:bg-stone-900 p-4 rounded-xl shadow-lg border border-amber-700/10 flex items-center gap-3 animate-bounce"
+          style={{ animationDuration: "3s" }}
+        >
+          <div className="bg-amber-700/20 p-2 rounded-lg text-amber-700">
+            <Code size={20} />
+          </div>
+          <div>
+            <p className="text-xs text-stone-500 dark:text-stone-400">
+              Experiência
+            </p>
+            <p className="font-bold text-stone-800 dark:text-white">2+ Anos</p>
+          </div>
+        </div>
       </motion.div>
     </motion.section>
   );

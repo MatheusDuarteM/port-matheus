@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { Mail, Phone } from "lucide-react";
-import { fadeInUp } from "@/lib/transitions";
+import { Mail, Phone, Send, Github, Linkedin, Instagram } from "lucide-react";
+import { fadeInUp, staggerContainer } from "@/lib/transitions";
 import { contactInfo } from "@/lib/valuesPage";
 
 export function SectionFooter() {
@@ -11,42 +11,130 @@ export function SectionFooter() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      variants={fadeInUp}
-      className="w-full pt-16 pb-8 scroll-mt-24"
+      variants={staggerContainer}
+      className="w-full pt-24 pb-12 scroll-mt-24 px-4 md:px-8"
     >
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h3 className="text-3xl font-serif mb-4 text-stone-900 dark:text-stone-100">
-            Vamos conversar?
-          </h3>
-          <p className="text-stone-600 dark:text-stone-400">
-            Estou sempre aberto a novos projetos e colaborações.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-stone-800 dark:text-stone-200">
-          <a
-            href={`mailto:${contactInfo.email}`}
-            className="flex items-center gap-3 hover:text-amber-700 transition-colors group"
+      {/* Container Principal com bordas arredondadas e fundo escuro */}
+      <div className="bg-[#1c1917] rounded-[2.5rem] p-8 md:p-16 text-white overflow-hidden relative border border-stone-800">
+        {/* Efeito de brilho sutil no fundo */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-700/10 blur-[100px] rounded-full -mr-32 -mt-32" />
+
+        <div className="grid lg:grid-cols-2 gap-16 relative z-10">
+          {/* LADO ESQUERDO: Textos e Contatos */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-col justify-center"
           >
-            <div className="p-3 bg-stone-100 dark:bg-stone-900 rounded-full group-hover:bg-amber-100 dark:group-hover:bg-amber-900/30 transition-colors">
-              <Mail size={20} />
+            <h3 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
+              Vamos trabalhar <br />
+              <span className="text-amber-600 italic">juntos.</span>
+            </h3>
+            <p className="text-stone-400 text-lg mb-10 max-w-sm">
+              Estou disponível para novos projetos. Sinta-se à vontade para
+              entrar em contato!
+            </p>
+
+            <div className="space-y-6">
+              <a
+                href={`mailto:${contactInfo.email}`}
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-12 h-12 bg-stone-800 rounded-full flex items-center justify-center group-hover:bg-amber-700 transition-colors">
+                  <Mail
+                    size={20}
+                    className="text-stone-300 group-hover:text-white"
+                  />
+                </div>
+                <span className="text-stone-300 group-hover:text-white transition-colors text-lg">
+                  {contactInfo.email}
+                </span>
+              </a>
+
+              <a
+                href={`tel:${contactInfo.phoneRaw}`}
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-12 h-12 bg-stone-800 rounded-full flex items-center justify-center group-hover:bg-amber-700 transition-colors">
+                  <Phone
+                    size={20}
+                    className="text-stone-300 group-hover:text-white"
+                  />
+                </div>
+                <span className="text-stone-300 group-hover:text-white transition-colors text-lg">
+                  {contactInfo.phone}
+                </span>
+              </a>
             </div>
-            {contactInfo.email}
-          </a>
-          <a
-            href={`tel:${contactInfo.phoneRaw}`}
-            className="flex items-center gap-3 hover:text-amber-700 transition-colors group"
+
+            {/* Redes Sociais */}
+            <div className="flex gap-4 mt-10">
+              <a
+                href="#"
+                className="text-stone-400 hover:text-white transition-colors"
+              >
+                <Github size={24} />
+              </a>
+              <a
+                href="#"
+                className="text-stone-400 hover:text-white transition-colors"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href="#"
+                className="text-stone-400 hover:text-white transition-colors"
+              >
+                <Instagram size={24} />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* LADO DIREITO: Formulário */}
+          <motion.div
+            variants={fadeInUp}
+            className="bg-white/5 p-8 rounded-2xl border border-white/10"
           >
-            <div className="p-3 bg-stone-100 dark:bg-stone-900 rounded-full group-hover:bg-amber-100 dark:group-hover:bg-amber-900/30 transition-colors">
-              <Phone size={20} />
-            </div>
-            {contactInfo.phone}
-          </a>
+            <form className="space-y-4">
+              <div className="space-y-2">
+                <label className="text-sm text-stone-400 ml-1">Nome</label>
+                <input
+                  type="text"
+                  placeholder="Seu nome"
+                  className="w-full bg-stone-900/50 border border-stone-700 rounded-xl px-4 py-3 text-white focus:border-amber-600 outline-none transition-all"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm text-stone-400 ml-1">E-mail</label>
+                <input
+                  type="email"
+                  placeholder="seu@email.com"
+                  className="w-full bg-stone-900/50 border border-stone-700 rounded-xl px-4 py-3 text-white focus:border-amber-600 outline-none transition-all"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm text-stone-400 ml-1">Mensagem</label>
+                <textarea
+                  placeholder="Como posso ajudar?"
+                  rows={4}
+                  className="w-full bg-stone-900/50 border border-stone-700 rounded-xl px-4 py-3 text-white focus:border-amber-600 outline-none transition-all resize-none"
+                />
+              </div>
+              <button className="w-full bg-amber-700 hover:bg-amber-800 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 mt-4 shadow-lg shadow-amber-900/20">
+                Enviar Mensagem <Send size={18} />
+              </button>
+            </form>
+          </motion.div>
         </div>
       </div>
-      <p className="mt-20 text-center text-xs text-stone-400 tracking-widest uppercase">
-        © {new Date().getFullYear()} Matheus Duarte Martins.
-      </p>
+
+      <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-stone-200 dark:border-stone-800 pt-8">
+        <p className="text-stone-500 text-sm">
+          © {new Date().getFullYear()} Matheus Duarte Martins.
+        </p>
+        <p className="text-stone-500 text-sm italic">
+          Desenvolvedor Full Stack
+        </p>
+      </div>
     </motion.footer>
   );
 }

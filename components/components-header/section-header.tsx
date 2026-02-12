@@ -31,7 +31,7 @@ export function SectionHeader() {
       initial="hidden"
       animate="visible"
       variants={fadeInUp}
-      className="flex w-full flex-row justify-between items-center border-b border-stone-200 dark:border-stone-800 pb-6"
+      className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border-custom px-8 py-4 flex justify-between items-center"
     >
       <h4 className="text-xl font-serif font-bold text-stone-800 dark:text-stone-100">
         Matheus Duarte <span className="text-amber-700">Martins</span>

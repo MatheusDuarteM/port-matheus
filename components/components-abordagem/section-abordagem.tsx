@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/transitions";
 import { projects } from "@/lib/valuesPage";
+import { ExternalLink, Github } from "lucide-react";
 
 export function SectionProjetos() {
   return (
@@ -12,42 +13,87 @@ export function SectionProjetos() {
       whileInView="visible"
       viewport={{ once: true }}
       variants={staggerContainer}
-      className="w-full space-y-8 scroll-mt-24"
+      className="w-full py-24 scroll-mt-24"
     >
-      <motion.h3
-        variants={fadeInUp}
-        className="text-3xl font-serif text-stone-900 dark:text-stone-100"
-      >
-        Projetos em Destaque
-      </motion.h3>
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <motion.span
+            variants={fadeInUp}
+            className="text-amber-700 font-semibold tracking-wider uppercase text-sm mb-2 block"
+          >
+            Meu Portfólio
+          </motion.span>
+          <motion.h3
+            variants={fadeInUp}
+            className="text-3xl md:text-4xl font-bold text-stone-900 dark:text-white font-serif"
+          >
+            Projetos em Destaque
+          </motion.h3>
+        </div>
+        <motion.p
+          variants={fadeInUp}
+          className="text-stone-500 dark:text-stone-400 max-w-md"
+        >
+          Uma seleção dos meus trabalhos mais recentes, focados em performance,
+          design e experiência do usuário.
+        </motion.p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((proj, i) => (
           <motion.div
             key={i}
             variants={fadeInUp}
-            className="group flex flex-col bg-white dark:bg-[#161412] rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 hover:shadow-xl transition-all duration-300"
+            className="group relative flex flex-col bg-white dark:bg-[#1c1917] rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 hover:shadow-2xl hover:shadow-amber-700/5 transition-all duration-500 hover:-translate-y-2"
           >
-            <div className="relative h-48 w-full overflow-hidden">
+            {/* Container da Imagem */}
+            <div className="relative h-56 w-full overflow-hidden">
+              <div className="absolute inset-0 bg-amber-900/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 duration-500" />
               <Image
                 src={proj.img}
                 alt={proj.title}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
+              {/* Links flutuantes no Hover */}
+              <div className="absolute inset-0 flex items-center justify-center gap-4 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                <a
+                  href="#"
+                  className="p-3 bg-white text-stone-900 rounded-full hover:bg-amber-700 hover:text-white transition-colors shadow-lg"
+                >
+                  <Github size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="p-3 bg-white text-stone-900 rounded-full hover:bg-amber-700 hover:text-white transition-colors shadow-lg"
+                >
+                  <ExternalLink size={20} />
+                </a>
+              </div>
             </div>
-            <div className="p-5 flex flex-col grow">
-              <span className="text-amber-700 text-[10px] uppercase tracking-widest font-bold mb-2">
-                {proj.tag}
-              </span>
-              <h4 className="text-xl font-serif text-stone-900 dark:text-stone-100 mb-3">
+
+            {/* Conteúdo do Card */}
+            <div className="p-8 flex flex-col grow">
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-amber-700 text-xs uppercase tracking-widest font-bold">
+                  {proj.tag}
+                </span>
+              </div>
+
+              <h4 className="text-xl font-bold text-stone-900 dark:text-white mb-3 group-hover:text-amber-700 transition-colors">
                 {proj.title}
               </h4>
-              <div className="mt-auto flex flex-wrap gap-2">
+
+              <p className="text-stone-500 dark:text-stone-400 text-sm leading-relaxed mb-6">
+                Descrição breve e impactante do projeto, destacando a solução
+                entregue.
+              </p>
+
+              <div className="mt-auto pt-6 border-t border-stone-100 dark:border-stone-800 flex flex-wrap gap-2">
                 {proj.tech.map((t, index) => (
                   <span
                     key={index}
-                    className="text-[10px] bg-stone-100 dark:bg-stone-900 px-2 py-1 rounded text-stone-500 border border-stone-200/50 dark:border-stone-800"
+                    className="text-[11px] font-medium bg-stone-50 dark:bg-stone-900/50 px-3 py-1 rounded-full text-stone-600 dark:text-stone-400 border border-stone-200/50 dark:border-stone-800"
                   >
                     {t}
                   </span>
