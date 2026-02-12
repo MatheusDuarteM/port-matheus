@@ -4,7 +4,17 @@ import { Mail, Phone, Send, Github, Linkedin, Instagram } from "lucide-react";
 import { fadeInUp, staggerContainer } from "@/lib/transitions";
 import { contactInfo } from "@/lib/valuesPage";
 
-export function SectionFooter() {
+interface SectionFooterProps {
+  // Adicione aqui as props que você deseja passar para o componente
+  tituloh3: string;
+  span: string;
+  paragrafop: string;
+  botao1: string;
+  paragrafop2: string;
+  paragrafop3: string;
+}
+
+export function SectionFooter(props: SectionFooterProps) {
   return (
     <motion.footer
       id="contato"
@@ -26,12 +36,11 @@ export function SectionFooter() {
             className="flex flex-col justify-center"
           >
             <h3 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-              Vamos trabalhar <br />
-              <span className="text-amber-600 italic">juntos.</span>
+              {props.tituloh3}
+              <span className="text-amber-600 italic">{props.span}</span>
             </h3>
             <p className="text-stone-400 text-lg mb-10 max-w-sm">
-              Estou disponível para novos projetos. Sinta-se à vontade para
-              entrar em contato!
+              {props.paragrafop}
             </p>
 
             <div className="space-y-6">
@@ -120,7 +129,7 @@ export function SectionFooter() {
                 />
               </div>
               <button className="w-full bg-amber-700 hover:bg-amber-800 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 mt-4 shadow-lg shadow-amber-900/20">
-                Enviar Mensagem <Send size={18} />
+                {props.botao1} <Send size={18} />
               </button>
             </form>
           </motion.div>
@@ -129,12 +138,12 @@ export function SectionFooter() {
 
       <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-stone-200 dark:border-stone-800 pt-8">
         <p className="text-stone-500 text-sm">
-          © {new Date().getFullYear()} Matheus Duarte Martins.
+          © {new Date().getFullYear()} {props.paragrafop2}
         </p>
-        <p className="text-stone-500 text-sm italic">
-          Desenvolvedor Full Stack
-        </p>
+        <p className="text-stone-500 text-sm italic">{props.paragrafop3}</p>
       </div>
     </motion.footer>
   );
 }
+
+export default SectionFooter;

@@ -4,7 +4,18 @@ import { motion } from "framer-motion";
 import { Github, Download, Code } from "lucide-react";
 import { staggerContainer, fadeInLeft, fadeInRight } from "@/lib/transitions";
 
-export function SectionHero() {
+interface SectionHeroProps {
+  span1: string;
+  tituloh1: string;
+  span2: string;
+  paragrafop: string;
+  btn1: string;
+  btn2: string;
+  paragrafop2: string;
+  paragrafop3: string;
+}
+
+export function SectionHero(props: SectionHeroProps) {
   return (
     <motion.section
       initial="hidden"
@@ -24,20 +35,19 @@ export function SectionHero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-700 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-700"></span>
           </span>
-          Disponível para novos projetos
+          {props.span1}
         </div>
 
         <h1 className="text-4xl lg:text-6xl font-bold text-stone-900 dark:text-white mb-6 leading-tight">
-          Olá, eu sou o Matheus. <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-amber-900">
-            Full Stack Developer
+          {props.tituloh1}
+          <br />
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-700 to-amber-900">
+            {props.span2}
           </span>
         </h1>
 
         <p className="text-lg text-stone-600 dark:text-stone-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-          Eu construo experiências web acessíveis, perfeitas em cada pixel e de
-          alto desempenho. Apaixonado por transformar problemas complexos em
-          designs simples e intuitivos.
+          {props.paragrafop}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -48,7 +58,7 @@ export function SectionHero() {
             className="w-full sm:w-auto"
           >
             <button className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-amber-700 text-white rounded-lg font-semibold hover:bg-amber-800 transition-all transform hover:-translate-y-1 shadow-lg shadow-amber-700/25">
-              <Download size={18} /> Download CV
+              <Download size={18} /> {props.btn1}
             </button>
           </a>
 
@@ -59,7 +69,7 @@ export function SectionHero() {
             className="w-full sm:w-auto"
           >
             <button className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-transparent text-stone-800 dark:text-white border-2 border-stone-200 dark:border-stone-800 rounded-lg font-semibold hover:border-amber-700 hover:text-amber-700 transition-all">
-              <Github size={18} /> GitHub Profile
+              <Github size={18} /> {props.btn2}
             </button>
           </a>
         </div>
@@ -90,12 +100,16 @@ export function SectionHero() {
           </div>
           <div>
             <p className="text-xs text-stone-500 dark:text-stone-400">
-              Experiência
+              {props.paragrafop2}
             </p>
-            <p className="font-bold text-stone-800 dark:text-white">2+ Anos</p>
+            <p className="font-bold text-stone-800 dark:text-white">
+              {props.paragrafop3}
+            </p>
           </div>
         </div>
       </motion.div>
     </motion.section>
   );
 }
+
+export default SectionHero;

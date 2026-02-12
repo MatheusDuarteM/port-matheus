@@ -7,7 +7,15 @@ import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export function SectionHeader() {
+interface SectionHeaderProps {
+  // Você pode adicionar props aqui se necessário
+  tituloh4_1: string;
+  tituloh4_2: string;
+  nav1: string;
+  nav2: string;
+}
+
+export function SectionHeader(props: SectionHeaderProps) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -20,7 +28,8 @@ export function SectionHeader() {
     return (
       <header className="flex w-full flex-row justify-between items-center border-b border-stone-200 dark:border-stone-800 pb-6 opacity-0">
         <h4 className="text-xl font-serif font-bold text-stone-800 dark:text-stone-100">
-          Matheus Duarte <span className="text-amber-700">Martins</span>
+          {props.tituloh4_1}{" "}
+          <span className="text-amber-700">{props.tituloh4_2}</span>
         </h4>
       </header>
     );
@@ -34,7 +43,8 @@ export function SectionHeader() {
       className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border-custom px-8 py-4 flex justify-between items-center"
     >
       <h4 className="text-xl font-serif font-bold text-stone-800 dark:text-stone-100">
-        Matheus Duarte <span className="text-amber-700">Martins</span>
+        {props.tituloh4_1}{" "}
+        <span className="text-amber-700">{props.tituloh4_2}</span>
       </h4>
 
       <div className="flex items-center gap-8">
@@ -45,7 +55,7 @@ export function SectionHeader() {
             whileTap={{ scale: 0.95 }}
             className="transition-colors cursor-pointer"
           >
-            Projetos
+            {props.nav1}
           </motion.a>
           <motion.a
             href="#contato"
@@ -53,7 +63,7 @@ export function SectionHeader() {
             whileTap={{ scale: 0.95 }}
             className="transition-colors cursor-pointer"
           >
-            Contato
+            {props.nav2}
           </motion.a>
         </nav>
 
@@ -69,3 +79,5 @@ export function SectionHeader() {
     </motion.header>
   );
 }
+
+export default SectionHeader;

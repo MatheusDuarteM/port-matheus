@@ -5,7 +5,15 @@ import { fadeInUp, staggerContainer } from "@/lib/transitions";
 import { projects } from "@/lib/valuesPage";
 import { ExternalLink, Github } from "lucide-react";
 
-export function SectionProjetos() {
+interface SectionProjetosProps {
+  // Adicione aqui as props que você deseja passar para o componente
+  span: string;
+  tituloh3: string;
+  paragrafop: string;
+  paragrafop2: string;
+}
+
+export function SectionProjetos(props: SectionProjetosProps) {
   return (
     <motion.section
       id="projetos"
@@ -21,21 +29,20 @@ export function SectionProjetos() {
             variants={fadeInUp}
             className="text-amber-700 font-semibold tracking-wider uppercase text-sm mb-2 block"
           >
-            Meu Portfólio
+            {props.span}
           </motion.span>
           <motion.h3
             variants={fadeInUp}
             className="text-3xl md:text-4xl font-bold text-stone-900 dark:text-white font-serif"
           >
-            Projetos em Destaque
+            {props.tituloh3}
           </motion.h3>
         </div>
         <motion.p
           variants={fadeInUp}
           className="text-stone-500 dark:text-stone-400 max-w-md"
         >
-          Uma seleção dos meus trabalhos mais recentes, focados em performance,
-          design e experiência do usuário.
+          {props.paragrafop}
         </motion.p>
       </div>
 
@@ -85,8 +92,7 @@ export function SectionProjetos() {
               </h4>
 
               <p className="text-stone-500 dark:text-stone-400 text-sm leading-relaxed mb-6">
-                Descrição breve e impactante do projeto, destacando a solução
-                entregue.
+                {props.paragrafop2}
               </p>
 
               <div className="mt-auto pt-6 border-t border-stone-100 dark:border-stone-800 flex flex-wrap gap-2">
@@ -106,3 +112,5 @@ export function SectionProjetos() {
     </motion.section>
   );
 }
+
+export default SectionProjetos;
