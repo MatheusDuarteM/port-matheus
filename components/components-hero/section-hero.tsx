@@ -53,7 +53,7 @@ export function SectionHero(props: SectionHeroProps) {
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           {/* Botão de Download CV */}
           <a
-            href="/curriculo.pdf"
+            href="/curriculo-Matheus-Duarte.pdf"
             download="Matheus_Duarte.pdf"
             className="w-full sm:w-auto"
           >
