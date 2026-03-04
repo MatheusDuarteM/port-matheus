@@ -32,6 +32,12 @@ export const projects = [
     img: "/projeto3.png",
     tech: ["Java", "Java Swing", "MySQL"],
   },
+  {
+    title: "E-commerce Simples",
+    tag: "Full Stack",
+    img: "/projeto4.png",
+    tech: ["Next.js", "Stripe", "Tailwind", "Supabase"],
+  },
 ];
 
 export const contactInfo = {

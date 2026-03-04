@@ -23,6 +23,15 @@
 }
 
 @theme inline {
+  /* MANTENDO SUAS FONTES ORIGINAIS */
+  --font-sans: var(--font-inter);
+  --font-playfair: var(--font-playfair);
+  --font-jetbrainsMono: var(--font-jetbrainsMono);
+  --font-jura: var(--font-jura);
+  --font-league-spartan: var(--font-league-spartan);
+  --font-geist-sans: var(--font-geist-sans);
+  --font-geist-mono: var(--font-geist-mono);
+
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-primary: var(--primary);
@@ -38,4 +47,12 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply font-sans antialiased;
+  }
 }
