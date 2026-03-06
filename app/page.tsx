@@ -28,7 +28,13 @@ export default function Home() {
           {...sectionServicosData}
         />
 
-        <SectionProjetos {...sectionProjetosData} />
+        <SectionProjetos
+          span={sectionProjetosData[0].span}
+          tituloh3={sectionProjetosData[0].tituloh3}
+          paragrafop={sectionProjetosData[0].paragrafop}
+          paragrafop2={sectionProjetosData[0].paragrafop2}
+          {...sectionProjetosData}
+        />
 
         <SectionFooter {...sectionFooterData} />
       </main>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/transitions";
 import { projects } from "@/lib/valuesPage";
-import { Github } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 interface SectionProjetosProps {
   // Adicione aqui as props que você deseja passar para o componente
@@ -64,11 +64,24 @@ export function SectionProjetos(props: SectionProjetosProps) {
               />
               {/* Links flutuantes no Hover */}
               <div className="absolute inset-0 flex items-center justify-center gap-4 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                {/* Link do GitHub (Estático ou vindo do array) */}
                 <a
                   href="https://github.com/MatheusDuarteM"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-3 bg-white text-stone-900 rounded-full hover:bg-amber-700 hover:text-white transition-colors shadow-lg"
                 >
                   <Github size={20} />
+                </a>
+
+                {/* Link do Site (Dinâmico vindo do seu objeto de valor) */}
+                <a
+                  href={proj.hrefsite} // <--- AQUI: use 'proj' em vez de 'props'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white text-stone-900 rounded-full hover:bg-amber-700 hover:text-white transition-colors shadow-lg"
+                >
+                  <ExternalLink size={20} />
                 </a>
               </div>
             </div>

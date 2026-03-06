@@ -1,5 +1,7 @@
 // src/lib/valuesPage.ts
 
+import { hr } from "framer-motion/client";
+
 export const languages = [
   { name: "JavaScript", level: "Básico" },
   { name: "TypeScript", level: "Básico" },
@@ -19,24 +21,28 @@ export const projects = [
     tag: "Full Stack",
     img: "/projeto1.png",
     tech: ["Next.js", "Stripe", "Tailwind"],
+    hrefsite: "https://juliabarcelos.com.br",
   },
   {
     title: "Horta Vertical",
     tag: "Automação",
     img: "/projeto2.jpeg",
     tech: ["C++", "Arduino", "Flutters"],
+    hrefsite: "https://github.com/MatheusDuarteM/painelCeetModelo",
   },
   {
     title: "Gerenciamento Encomenda",
     tag: "Full Stack",
     img: "/projeto3.png",
     tech: ["Java", "Java Swing", "MySQL"],
+    hrefsite: "https://github.com/MatheusDuarteM/Java-Software-Encomenda",
   },
   {
     title: "E-commerce Simples",
     tag: "Full Stack",
     img: "/projeto4.png",
     tech: ["Next.js", "Stripe", "Tailwind", "Supabase"],
+    hrefsite: "https://lojista-mu.vercel.app/",
   },
 ];
 
@@ -81,14 +87,40 @@ export const sectionServicosData = {
   span2: "Concluído em 2020",
 };
 
-export const sectionProjetosData = {
-  span: "Portfolio Técnico",
-  tituloh3: "Aplicações & Soluções",
-  paragrafop:
-    "Projetos desenvolvidos para consolidar conhecimentos em CRUD, interfaces dinâmicas e integração de sistemas, utilizando as melhores práticas de desenvolvimento.",
-  paragrafop2:
-    "Desenvolvimento de sistema completo com interface intuitiva, foco em performance e experiência do usuário final.",
-};
+export const sectionProjetosData = [
+  {
+    span: "Portfolio Técnico",
+    tituloh3: "Aplicações & Soluções",
+    paragrafop:
+      "Projetos desenvolvidos para consolidar conhecimentos em CRUD, interfaces dinâmicas e integração de sistemas, utilizando as melhores práticas de desenvolvimento.",
+    paragrafop2:
+      "Desenvolvimento de sistema completo com interface intuitiva, foco em performance e experiência do usuário final.",
+  },
+  {
+    span: "Automação & Inovação",
+    tituloh3: "Soluções Criativas",
+    paragrafop:
+      "Projetos de automação residencial e sistemas embarcados, aplicando conhecimentos de C++ e Python para criar soluções práticas e inovadoras.",
+    paragrafop2:
+      "Desenvolvimento de sistema de automação para horta vertical, integrando sensores e atuadores para controle eficiente do ambiente.",
+  },
+  {
+    span: "Sistemas de Gerenciamento",
+    tituloh3: "Organização & Eficiência",
+    paragrafop:
+      "Projetos focados em gerenciamento de dados e processos, utilizando Java e MySQL para criar sistemas robustos e escaláveis.",
+    paragrafop2:
+      "Desenvolvimento de sistema de gerenciamento de encomendas, com interface gráfica e banco de dados para controle eficiente de pedidos.",
+  },
+  {
+    span: "E-commerce Simples",
+    tituloh3: "Vendas Online",
+    paragrafop:
+      "Projeto de e-commerce simples, utilizando Next.js, Stripe e Tailwind CSS para criar uma experiência de compra fluida e moderna.",
+    paragrafop2:
+      "Desenvolvimento de plataforma de vendas online, com integração de pagamento e design responsivo para dispositivos móveis.",
+  },
+];
 
 export const sectionFooterData = {
   tituloh3: "Pronto para contribuir",
