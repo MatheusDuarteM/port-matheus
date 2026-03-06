@@ -89,20 +89,23 @@ export function SectionHero(props: SectionHeroProps) {
             className="object-cover"
           />
         </div>
-
-        {/* Badge de Experiência flutuante */}
+        {/* Badge de Experiência flutuante - Refinado e menor */}
         <div
-          className="absolute bottom-4 right-0 lg:bottom-10 lg:right-4 bg-white dark:bg-stone-900 p-4 rounded-xl shadow-lg border border-amber-700/10 flex items-center gap-3 animate-bounce"
+          className="absolute bottom-4 right-0 lg:bottom-1 lg:right-1 bg-white dark:bg-stone-900 p-2 pl-2.5 pr-4 rounded-xl shadow-lg border border-amber-700/10 flex items-center gap-1.5 w-fit animate-bounce"
           style={{ animationDuration: "3s" }}
         >
-          <div className="bg-amber-700/20 p-2 rounded-lg text-amber-700">
-            <Code size={20} />
+          {/* MUDANÇAS AQUI: p-2 -> p-1.5 para compactar o container do ícone */}
+          <div className="bg-amber-700/20 p-1.5 rounded-lg text-amber-700">
+            {/* MUDANÇAS AQUI: size={20} -> size={16} para ícone menor */}
+            <Code size={16} />
           </div>
           <div>
-            <p className="text-xs text-stone-500 dark:text-stone-400">
+            {/* MUDANÇAS AQUI: gap-1.5 no container pai agora gerencia o espaço */}
+            <p className="text-[10px] leading-tight text-stone-500 dark:text-stone-400">
               {props.paragrafop2}
             </p>
-            <p className="font-bold text-stone-800 dark:text-white">
+            {/* text-xs para a fonte, text-xs é 12px */}
+            <p className="font-bold text-xs leading-tight text-stone-800 dark:text-white">
               {props.paragrafop3}
             </p>
           </div>
