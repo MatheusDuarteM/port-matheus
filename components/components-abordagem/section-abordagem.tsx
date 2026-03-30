@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/transitions";
-import { projects } from "@/lib/valuesPage";
+import { projects, sectionProjetosData } from "@/lib/valuesPage";
 import { ExternalLink, Github } from "lucide-react";
 
 interface SectionProjetosProps {
@@ -99,7 +99,7 @@ export function SectionProjetos(props: SectionProjetosProps) {
               </h4>
 
               <p className="text-stone-500 dark:text-stone-400 text-sm leading-relaxed mb-6">
-                {props.paragrafop2}
+                {sectionProjetosData[i]?.paragrafop2 || props.paragrafop2}
               </p>
 
               <div className="mt-auto pt-6 border-t border-stone-100 dark:border-stone-800 flex flex-wrap gap-2">
