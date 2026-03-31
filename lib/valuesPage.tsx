@@ -1,7 +1,5 @@
 // src/lib/valuesPage.ts
 
-import { hr } from "framer-motion/client";
-
 export const languages = [
   { name: "JavaScript", level: "Básico" },
   { name: "TypeScript", level: "Básico" },
@@ -60,7 +58,7 @@ export const sectionHeaderData = {
 };
 
 export const sectionHeroData = {
-  span1: "— Disponível para novos desafios em Software!",
+  span1: " Disponível para novos desafios em Software!",
   tituloh1: "Desenvolvedor Full Stack Júnior & Engenheiro de Automação.",
   span2: "especialista em transformar dados em soluções.",
   paragrafop:
@@ -94,7 +92,7 @@ export const sectionProjetosData = [
     paragrafop:
       "Projetos desenvolvidos para consolidar conhecimentos em CRUD, interfaces dinâmicas e integração de sistemas, utilizando as melhores práticas de desenvolvimento.",
     paragrafop2:
-      "Desenvolvimento de sistema completo com interface intuitiva, foco em performance e experiência do usuário final.",
+      "Desenvolvido landing page para psicóloga, com integração de WhatsApp e design responsivo, utilizando Next.js, Stripe e Tailwind CSS.",
   },
   {
     span: "Automação & Inovação",
@@ -102,7 +100,7 @@ export const sectionProjetosData = [
     paragrafop:
       "Projetos de automação residencial e sistemas embarcados, aplicando conhecimentos de C++ e Python para criar soluções práticas e inovadoras.",
     paragrafop2:
-      "Desenvolvimento de sistema de automação para horta vertical, integrando sensores e atuadores para controle eficiente do ambiente.",
+      "Automatização de horta vertical, utilizando Arduino para controle de irrigação e monitoramento de condições ambientais, com interface em Flutter para visualização em tempo real.",
   },
   {
     span: "Sistemas de Gerenciamento",
@@ -118,7 +116,7 @@ export const sectionProjetosData = [
     paragrafop:
       "Projeto de e-commerce simples, utilizando Next.js, Stripe e Tailwind CSS para criar uma experiência de compra fluida e moderna.",
     paragrafop2:
-      "Desenvolvimento de plataforma de vendas online, com integração de pagamento e design responsivo para dispositivos móveis.",
+      "Desenvolvimento de loja online, com integração de pagamento e design responsivo, utilizando Next.js, Stripe e Tailwind CSS, hospedada no Vercel para alta performance.",
   },
 ];
 
