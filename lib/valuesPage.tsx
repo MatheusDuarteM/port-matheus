@@ -1,5 +1,7 @@
 // src/lib/valuesPage.ts
 
+import { span } from "framer-motion/client";
+
 export const languages = [
   { name: "JavaScript", level: "Básico" },
   { name: "TypeScript", level: "Básico" },
@@ -41,6 +43,13 @@ export const projects = [
     img: "/projeto4.png",
     tech: ["Next.js", "Stripe", "Tailwind", "Supabase"],
     hrefsite: "https://lojista-mu.vercel.app/",
+  },
+  {
+    title: "LandPage Portaria 7",
+    tag: "Full Stack",
+    img: "/projeto5.png",
+    tech: ["Next.js", "Stripe", "Tailwind"],
+    hrefsite: "https://portaria7.vercel.app/",
   },
 ];
 
@@ -117,6 +126,14 @@ export const sectionProjetosData = [
       "Projeto de e-commerce simples, utilizando Next.js, Stripe e Tailwind CSS para criar uma experiência de compra fluida e moderna.",
     paragrafop2:
       "Desenvolvimento de loja online, com integração de pagamento e design responsivo, utilizando Next.js, Stripe e Tailwind CSS, hospedada no Vercel para alta performance.",
+  },
+  {
+    span: "LandPage Portaria 7",
+    tituloh3: "Presença Digital",
+    paragrafop:
+      "Desenvolvimento de landing page para o canal do youtube portaria, com foco em design responsivo e integração de contato, utilizando Next.js e Tailwind CSS.",
+    paragrafop2:
+      "Desenvolvimento de landing page para o canal do youtube portaria, com foco em design responsivo e integração de contato, utilizando Next.js e Tailwind CSS, hospedada no Vercel para alta performance.",
   },
 ];
 
