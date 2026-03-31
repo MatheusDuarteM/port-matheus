@@ -1,7 +1,4 @@
 // src/lib/valuesPage.ts
-
-import { span } from "framer-motion/client";
-
 export const languages = [
   { name: "JavaScript", level: "Básico" },
   { name: "TypeScript", level: "Básico" },
